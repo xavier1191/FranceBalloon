@@ -410,7 +410,7 @@ nav {
  /* Begining of the clients part */
 .client {
     background-color: white;
-    height: 495px;
+    height: 540px;
 }
 
 .testimony {
@@ -670,6 +670,10 @@ footer {
         display: flex;
     }
 
+    .big-search-bar {
+        display: none;
+    }
+
     
 }
 /* fin de la gestion du menu  */
@@ -710,7 +714,7 @@ footer {
             z-index: 2;
             width: 232px;
             height: 462px;
-            left: -23px;
+            left: -28px;
        }
 
        .client {
@@ -824,6 +828,36 @@ footer {
         .allComments {
             grid-column: 2 /3;
             justify-self: center;
+        }
+
+        .bar {
+            display: none;
+        }
+
+        .search {
+            display: none;
+        }
+
+        .big-search-bar {
+            width: 80%;
+            height: 80px;
+            background-color: lightgray;
+            border: 1px solid black;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
+
+        .part-one {
+            width: 33%;
+            padding: 10px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
 
 
