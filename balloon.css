@@ -1,25 +1,240 @@
+/* début du menu header */
 body {
+    margin: 0;
+    padding: 0;
+}
+  
+.navibar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;   
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover {
+    background-color: lightgray;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .ligne {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;   
+}
+
+/* début du slide et du site apres le header  */
+.container {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.slider {
+    width: 100vw;
+    height: 760px;   
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 760px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    /* width: 100vw; */
+    height: 760px;
+}
+
+
+
+
+/* css for manual slide navigation  */
+.navigation-manual {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    padding-left: 460px;
+    display: none;
+}
+
+.manual-btn {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
     background: black;
 }
 
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+
+
+/* css for automatic navigation */
+.navigation-auto {
+    position: absolute;
+    display: none;
+    width: 1440px;
+    justify-content: center;
+    margin-top: 460px; 
+}
+
+.navigation-auto div{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+   margin-right: 40px; 
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background: black;    
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background: black;    
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background: black;    
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background: black;    
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    top: -37px
+}
+
+.bar {
+    width: 80px;
+    height: 80px;
+    background-color: lightgray;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    width: 175px;
+    background-color: #16125A;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    z-index: 2;
+    position: relative;
+}
+
+.setting-icon {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 570px 80px 500px 633px 330px 333px 630px;
-    grid-template-areas: 
-    "nav nav nav"
-    ". header ."
-    ". bar ."
-    ". fly ."
-    ". clients ."
-    ". contact ."
-    ". guy ."
-    ". footer .";
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -27,20 +242,11 @@ nav {
     background-color: seashell;
 }
 
-.header {
-    grid-area: header; 
-    width: 100%;
-    background-color: red;
-    display: grid;
-    padding: 18px;
-}
 
 .title {
     font-size: 31px;
     justify-self: center;
     align-self: center;
-    position: relative;
-    top: -115px;
 }
 
 
@@ -52,32 +258,579 @@ nav {
     top: 100px;
 }
 
-.bar {
-    background-color: blue;
-    grid-area: bar;
+
+
+/* Begining of the "fly" part  */
+.youCanFly {
+    background-color: white;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.fly {
-    grid-area: fly;
-    background-color: yellow;
+.region {
+    font-size: 21px;
+    color: white;
 }
 
+.province {
+    font-size: 31px;
+    color: white;
+}
+
+.docTitles {
+    font-size: 24px;
+    font-family: playfair-display;
+    color: #6783EF;
+    text-align: center;
+    align-self: center;
+    margin-top: 55px;
+}
+/* Begining of the carousel */
+
+
+
+.Caroussel {
+    display: none;
+}
+
+
+
+    .containerfly {
+        width: 98%;
+        height: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: clip;
+        position: relative;
+        top: -15px;
+    }
+    
+    .container::-webkit-scrollbar {
+        visibility: hidden;
+    }
+
+
+
+    /* Pour les carré de déco en fond */
+    .deco {
+        width: 20%;
+        position: relative;
+        background-color: #FFDBAF;
+        z-index: 1;
+    }
+    
+
+
+    /* Début des fleches cursor à droite et à gauche */
+    .right {
+        position: absolute;
+        top: 40%;
+        font-size: 60px;
+        font-weight: bold;
+        color: #6783EF;
+        cursor: pointer;
+        z-index: 1;
+    }
+    
+    .right:nth-of-type(2){
+        left: 90%;
+        text-align: right;
+    }
+    /* fin des fleches cursor */
+    
+    
+
+    .fly {
+        width: 280px;
+        height: 421px;
+        background: white;
+        border: 1px solid black;
+        margin: 20px;
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-direction: column; 
+        transition: 0.5s;
+    }
+    
+    .discover {
+        width: 280px;
+        height: 58px;
+        background-color: orange;
+        border: 1px solid lightgray;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .price {
+        width: 280px;
+        height: 60px;
+        background-color: white;
+        border: 1px solid lightgray;
+        display: block;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        box-sizing: border-box;
+    }
+    
+    .prix {
+        position: relative;
+        top: -7px;
+    }
+    
+    .start {
+        margin: 0px;
+        padding-top: 5px;
+    }
+    
+    .details {
+        width: 280px;
+        height: 119px;
+        border: 1px solid lightgray;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .terms2 {
+        position: relative;
+        left: 181px;
+        top: -50px;
+    }
+    
+
+
+
+
+ /* Begining of the clients part */
 .client {
-    grid-area: clients;
-    background-color: brown;
+    background-color: white;
+    height: 495px;
 }
 
+.testimony {
+    background-color: #16125A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonyText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: 200;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.allComments {
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    border: 2px solid black;
+    margin: 0 auto;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.name {
+    color: white;
+    font-size: 14px;
+    margin: 0;  
+}
+
+.location {
+    margin: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+.corpse {
+    color: white;
+    align-self: end;
+    padding-left: 8px;
+}
+
+.button {
+    width: 216px;
+    background-color: orange;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+/* End of the clients part */
+
+
+
+/* begining of the contact part */
 .contact {
-    grid-area: contact;
-    background-color: purple;
+    background-color: white;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.wall {
+    text-align: center;
+}
+
+.blueWall {
+    display: none;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    text-align: center;
+    color: ;
+    position: relative;
+    z-index: 2;
+    top: -180px;
+    font-weight: 600;
+}
+
+.infoImg {
+    opacity: 0.5;
+    position: relative;
+    z-index: 1;
+}
+
+.contactIndication {
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: black;
+    border: 2px solid black;
+}
+
+.blueParagraph {
+    color: white;
+    text-align: center;
+}
+/* end of the contact part  */
+
+
+
+/* begining of the "guy" part  */
 .guy {
-    grid-area: guy;
-    background-color: salmon;
+    background-color: #16125A;
+    color: white;
+    height: 355px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 42px;
 }
 
-footer {
-    grid-area: footer;
-    background-color: green;
+.profilPic {
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    background-color: white;
+    margin-bottom: -18px;
 }
+
+.guyTitle {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.guyParagraph {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    line-height: 18px;
+}
+
+.guyContent {
+    display: flex;
+    flex-direction: column;
+}
+/* End of the "guy" part */
+
+
+
+/* begining of the footer part  */
+footer {
+    background-color: white;
+    height: 630px;
+    background-color: white;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+}
+
+.infos {
+    display: flex;
+
+    padding: 25px;
+    justify-content: center;
+}
+
+.law {
+    display: flex;
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.pay {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-left: 18px;
+}
+
+.paiementSecure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+}
+/* end of the footer part */
+
+
+
+/* menu responsive   */
+
+@media (max-width: 480px) {
+
+    /* Pour le menu  */
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navibar {
+       flex-direction: column;
+       align-items: flex-start; 
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;    
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    
+}
+/* fin de la gestion du menu  */
+
+
+    /* Début de la gestion du corps du site (la partie grid) */
+    @media (min-width: 480px) {
+
+        .youCanFly {
+            display: grid;
+            grid-template-columns: 9% 78% 9%;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .docTitles {
+            grid-column: 2 / 3;
+            grid-row: 1 /2;
+            justify-content: center;
+            align-self: center;
+        }
+
+       .containerfly {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            position: relative;
+            z-index: 2;
+            top: -32px;
+            left: 141px;
+       }
+
+       .orange {
+            display: grid;
+            grid-column: 1 /2;
+            grid-row: 2 / 3;
+            background-color: orange;
+            border: 2px solid black;
+            position: relative;
+            z-index: 2;
+            width: 232px;
+            height: 462px;
+            left: -23px;
+       }
+
+       .client {
+            background-color: white;
+            height: 640px;
+            margin-top: 30px;
+            padding-top: 50px;
+            display: grid;
+            grid-template-columns: 9% 78% 9%;
+            width: 100%;
+            align-items: center;
+            grid-template-rows: 1fr 1fr 1fr;
+       }
+
+       .testimony {
+            display: flex;
+            width: 70%;
+            justify-content: ;
+            flex-direction: row;
+            padding: 30px;
+       }
+
+       .docTitles {
+            align-self: center;
+            grid-column: 2 / 3;
+            justify-self: center;
+       }
+
+       .orange-deux {
+           grid-column: 1 / 2;
+           width: 233px;
+           height: 463px;
+           background-color: orange;
+           grid-row: 2 /3;
+           border: 2px solid black;
+       }
+
+       .testimonyText {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: start;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-weight: 200;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
+       .testimony {
+           display: flex;
+           width: 78%;
+           flex-direction: row;
+           padding: 30px;
+           grid-column: 2 / -1;
+           left: 70px;
+           position: relative;
+       }
+
+       .contact {
+            height: 900px;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 9% 70% 9%;
+            grid-template-rows: 1fr 1fr 1fr;            
+       }
+
+       .contact-title {
+            grid-column: 2 / 3;
+       }
+
+       .square {
+           background-image: url(contact.jpg);
+           grid-area: wall;
+           grid-column: 1 /-1;
+           grid-row: 2 /3;
+           display: flex;
+           flex-direction: row; 
+           height: 490px;  
+       }
+
+       .wall {
+            width: 70%;
+            color: white;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 430px;
+        }
+       
+        .blueWall {
+            width: 40%;
+            background-color: blue;
+            color: white;
+            height: 430px;
+            padding: 30px;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .infos {
+            display: flex;
+            padding: 25px;
+            justify-content: flex-start;
+        }
+
+        .allComments {
+            grid-column: 2 /3;
+            justify-self: center;
+        }
+
+
+
+
+
+
+
+    }
+    
