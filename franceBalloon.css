@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.grid {
+    margin-left: 18px;
+    margin-right: 18px;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 570px 80px 500px 633px 330px 333px 630px;
+    grid-template-areas: 
+    ". header ."
+    ". bar ."
+    ". fly ."
+    ". clients ."
+    ". contact ."
+    ". guy ."
+    ". footer .";
+}
