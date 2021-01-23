@@ -220,6 +220,8 @@ body {
 
 .setting-icon {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
 a {
@@ -829,7 +831,7 @@ footer {
         .contactIndication {
             margin: 0 auto;
         }
-        
+
         .infos {
             display: flex;
             padding: 25px;
