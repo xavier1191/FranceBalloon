@@ -1,3 +1,4 @@
+
 /* début du menu header */
 body {
     margin: 0;
@@ -264,6 +265,7 @@ nav {
     align-self: center;
     position: relative;
     top: 100px;
+    overflow-x: hidden;
 }
 
 
@@ -276,6 +278,7 @@ nav {
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .region {
@@ -894,13 +897,6 @@ footer {
             justify-content: center;
             flex-direction: row; 
         }
-
-        
-
-
-
-
-
 
     }
     
