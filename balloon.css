@@ -365,6 +365,11 @@ nav {
         flex-direction: column; 
         transition: 0.5s;
     }
+
+    .littleImage {
+        width: 280px;
+        height: 180px;
+    }
     
     .discover {
         width: 280px;
