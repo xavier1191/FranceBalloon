@@ -800,7 +800,7 @@ footer {
        }
 
        .contact-title {
-            grid-column: 2 / 3 !important;
+            grid-column: 2 / 3;
        }
 
        .square {
