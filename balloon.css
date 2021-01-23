@@ -816,7 +816,7 @@ footer {
        
         .blueWall {
             width: 40%;
-            background-color: blue;
+            background-color: #16125A;
             color: white;
             height: 430px;
             padding: 30px;
@@ -826,6 +826,10 @@ footer {
             flex-direction: column;
         }
 
+        .contactIndication {
+            margin: 0 auto;
+        }
+        
         .infos {
             display: flex;
             padding: 25px;
