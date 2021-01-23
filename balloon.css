@@ -94,8 +94,14 @@ body {
 .slide img {
     width: 100vw;
     height: 760px;
+    object-fit: cover;
 }
 
+.responsive {
+    width: 100%;
+    max-width: 3000px;
+}
+ 
 
 
 
@@ -395,6 +401,7 @@ nav {
         border: 1px solid lightgray;
         display: flex;
         flex-direction: column;
+        padding-bottom: 15px;
     }
     
     .terms2 {
@@ -597,9 +604,9 @@ footer {
     background-color: white;
     height: 630px;
     background-color: white;
-        height: 630px;
-        display: flex;
-        flex-direction: column;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
 }
 
 .infos {
@@ -619,7 +626,7 @@ footer {
 
 .pay {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
     padding-left: 18px;
 }
@@ -636,7 +643,7 @@ footer {
 
 /* menu responsive   */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
     /* Pour le menu  */
     .toggle-button {
@@ -680,7 +687,7 @@ footer {
 
 
     /* Début de la gestion du corps du site (la partie grid) */
-    @media (min-width: 480px) {
+    @media (min-width: 601px) {
 
         .youCanFly {
             display: grid;
@@ -783,7 +790,7 @@ footer {
        }
 
        .contact-title {
-            grid-column: 2 / 3;
+            grid-column: 2 / 3 !important;
        }
 
        .square {
@@ -860,6 +867,24 @@ footer {
             cursor: pointer;
         }
 
+
+        footer {
+            background-color: white;
+            height: 630px;
+            background-color: white;
+            height: 630px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pay {
+            display: flex;
+            justify-content: center;
+            flex-direction: row; 
+        }
+
+        
 
 
 
