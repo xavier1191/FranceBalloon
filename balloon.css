@@ -273,7 +273,7 @@ nav {
 /* Begining of the "fly" part  */
 .youCanFly {
     background-color: white;
-    height: 546px;
+    height: 590px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -299,6 +299,7 @@ nav {
     text-align: center;
     align-self: center;
     margin-top: 55px;
+    margin-bottom: 25px;
 }
 /* Begining of the carousel */
 
@@ -317,8 +318,6 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        position: relative;
-        top: -15px;
     }
     
     .container::-webkit-scrollbar {
@@ -395,10 +394,10 @@ nav {
         box-sizing: border-box;
     }
     
-    .prix {
+    .pricing {
         position: relative;
         top: -7px;
-    }
+    } 
     
     .start {
         margin: 0px;
@@ -723,16 +722,16 @@ footer {
             left: 141px;
        }
 
-       .orange {
+       .deco {
             display: grid;
             grid-column: 1 /2;
             grid-row: 2 / 3;
-            background-color: orange;
+            background-color: #FFDBAF;
             border: 2px solid black;
             position: relative;
             z-index: 2;
             width: 232px;
-            height: 432px;
+            height: 465px;
             left: -28px;
        }
 
@@ -761,11 +760,11 @@ footer {
             justify-self: center;
        }
 
-       .orange-deux {
+       .deco-deux {
            grid-column: 1 / 2;
            width: 233px;
            height: 463px;
-           background-color: orange;
+           background-color: #FFDBAF;
            grid-row: 2 /3;
            border: 2px solid black;
        }
@@ -863,7 +862,7 @@ footer {
         .big-search-bar {
             width: 80%;
             height: 80px;
-            background-color: lightgray;
+            background-color: white;
             border: 1px solid black;
             position: relative;
             z-index: 10;
