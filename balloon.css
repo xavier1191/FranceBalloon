@@ -790,6 +790,7 @@ footer {
            grid-column: 2 / -1;
            left: 70px;
            position: relative;
+           grid-row: 2 /3;
        }
 
        .contact {
@@ -823,6 +824,7 @@ footer {
             justify-content: center;
             align-items: center;
             height: 430px;
+            text-align: center;
         }
        
         .blueWall {
@@ -850,6 +852,8 @@ footer {
         .allComments {
             grid-column: 2 /3;
             justify-self: center;
+            grid-row: 2 /3;
+            align-self: end;
         }
 
         .bar {
