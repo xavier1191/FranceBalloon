@@ -313,7 +313,6 @@ nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        overflow-x: clip;
         position: relative;
         top: -15px;
     }
@@ -528,7 +527,6 @@ nav {
     padding-left: 18px;
     padding-right: 18px;
     text-align: center;
-    color: ;
     position: relative;
     z-index: 2;
     top: -180px;
@@ -749,7 +747,6 @@ footer {
        .testimony {
             display: flex;
             width: 70%;
-            justify-content: ;
             flex-direction: row;
             padding: 30px;
        }
